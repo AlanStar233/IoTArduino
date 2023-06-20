@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">IoTArduino</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="radioHome">主页</string>
+    <string name="radioData">数据</string>
+    <string name="radioRequest">模拟请求</string>
+    <string name="radioSettings">设置</string>
+    <string name="setLockState">v1/setLockState/</string>
+    <string name="getLockState">v1/getLockState/</string>
+    <string name="setLightState">v1/setLightState/</string>
+    <string name="getLightState">v1/getLightState/</string>
+    <string name="setTempAndHumidState">v1/setTempAndHumidState/</string>
+    <string name="getTempAndHumidState">v1/getTempAndHumidState/</string>
+    <string name="StateCodeDefault">未知</string>
+    <string name="defaultLatency">999ms</string>
+    <string name="WebAPI_Statement">Web API 状态</string>
+    <string name="APIDelayTimer">0/0</string>
+    <string name="waitForFlush">等待刷新</string>
+    <string name="stringAPIAddress">接口地址</string>
+    <string name="stringStatusCode">状态码</string>
+    <string name="stringAPILatency">接口延迟</string>
+    <string name="string_lockState">门锁状态</string>
+    <string name="tv_lockState">已锁</string>
+    <string name="string_lightData">光照数据</string>
+    <string name="string_tempAndHumidData">温湿度数据</string>
+</resources>

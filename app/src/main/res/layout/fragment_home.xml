@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <!-- TopBar -->
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/mTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/TianyiBlue"
+        app:qmui_topbar_title_color="@color/white"
+        app:qmui_topbar_image_btn_width="40dp"
+        app:qmui_topbar_image_btn_height="40dp"
+        android:fitsSystemWindows="true" />
+
+    <!-- 主视觉区 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/qmui_topbar_height"
+        android:background="@color/qmui_config_color_white">
+
+        <!-- API 健康度大盘 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/WebAPI_Statement"
+                android:textSize="28sp"
+                android:textAlignment="center"/>
+
+        <!-- 标题 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/latency_border"
+                android:text="@string/stringAPIAddress"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/latency_border"
+                android:text="@string/stringStatusCode"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/latency_border"
+                android:text="@string/stringAPILatency"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+            <!-- Light: 门锁状态 set API -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/setLockState"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/setLockStateCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/StateCodeDefault"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/setLockStateLatency"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/defaultLatency"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <!-- Light: 门锁状态 get API -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/getLockState"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/getLockStateCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/StateCodeDefault"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/getLockStateLatency"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/defaultLatency"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <!-- Light: 光照状态 set API -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/setLightState"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/setLightStateCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/StateCodeDefault"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/setLightStateLatency"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/defaultLatency"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <!-- Light: 光照状态 get API -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/getLightState"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/getLightStateCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/StateCodeDefault"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/getLightStateLatency"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/defaultLatency"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <!-- Light: 温湿度状态 set API -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/setTempAndHumidState"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/setTempAndHumidStateCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/StateCodeDefault"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/setTempAndHumidStateLatency"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/defaultLatency"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <!-- Light: 温湿度状态 get API -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/getTempAndHumidState"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/getTempAndHumidStateCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/StateCodeDefault"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/getTempAndHumidStateLatency"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/latency_border"
+                    android:text="@string/defaultLatency"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="@string/waitForFlush"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/APIDelayTimer"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/APIDelayTimer"
+                    android:textSize="20sp"
+                    android:textAlignment="center" />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+</FrameLayout>
