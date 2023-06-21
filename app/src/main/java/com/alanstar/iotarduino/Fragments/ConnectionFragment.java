@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.alanstar.iotarduino.R;
+import com.alanstar.iotarduino.utils.GlobalValue;
 import com.alanstar.iotarduino.utils.IoTDataGetter;
 import com.alanstar.iotarduino.utils.TopBarController;
 import com.github.mikephil.charting.charts.LineChart;
@@ -28,6 +29,13 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +54,7 @@ public class ConnectionFragment extends Fragment {
     // 创建变量
     boolean isFirstLoad = true; // 是否为第一次加载 Fragment
     int nowTimerCount = 0;  // 当前计时时长
-    int targetTimerCount = 5;   // 目标计时时长 (与 settings 同步)
+    int targetTimerCount = 0;   // 目标计时时长 (与 settings 同步)
     Timer mTimer;
     TimerTask mTimerTask;
 
@@ -93,6 +101,15 @@ public class ConnectionFragment extends Fragment {
         return view;
     }
 
+    // Light: 视图创建完毕
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // 调用 chartsFreshTime 数值更新器
+        Thread chartsFreshTimeUpdater = new Thread(chartFreshTimeRunnable);
+        chartsFreshTimeUpdater.start();
+    }
+
     // Light: 注册组件
     private void initComponents(View view) {
         mTopBar = view.findViewById(R.id.mTopBar);
@@ -106,6 +123,9 @@ public class ConnectionFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        // 调用一遍 chartFreshTimeRunnable 数值更新器
+        Thread chartsFreshTimeUpdater = new Thread(chartFreshTimeRunnable);
+        chartsFreshTimeUpdater.start();
         // Light: 图表统一刷新 (执行于主线程), 若第一次加载则将标志位设为 false, 否则直接刷新
         if (isFirstLoad) {
             isFirstLoad = false;
@@ -251,6 +271,32 @@ public class ConnectionFragment extends Fragment {
                 public void onError(String errorMessage) {
                 }
             });
+        }
+    };
+
+    // Light: chartsFreshTime 数值更新器
+    Runnable chartFreshTimeRunnable = () -> {
+        try {
+            File configFile = new File(getActivity().getFilesDir(), GlobalValue.CONFIG_FILE_NAME);
+
+            FileReader configReader = new FileReader(configFile);
+            BufferedReader configBufferedReader = new BufferedReader(configReader);
+
+            StringBuilder configStringBuilder = new StringBuilder();
+            String configLine;
+            while ((configLine = configBufferedReader.readLine()) != null) {
+                configStringBuilder.append(configLine);
+            }
+            configBufferedReader.close();
+
+            // 数据提取
+            JSONObject configJSON = new JSONObject(configStringBuilder.toString());
+            targetTimerCount = configJSON.getInt("ChartsFreshTime");
+
+            // 不知道为什么 startTimer 为什么没有更新数值所以在这里手动更新一下
+//            getActivity().runOnUiThread(() -> APIDelayTimer_Connection.setText());
+        } catch (IOException | JSONException e) {
+            Log.e("chartFreshTimeRunnable", "ChartsFreshTime: ", e);
         }
     };
 }

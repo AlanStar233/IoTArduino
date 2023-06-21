@@ -80,6 +80,15 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_SettingsUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="更新"
+                android:textSize="20sp"
+                android:background="@color/TianyiBlue"
+                android:foreground="?attr/selectableItemBackground" />
+
         </LinearLayout>
 
 
