@@ -1,5 +1,10 @@
 package com.alanstar.iotarduino.Fragments;
 
+import static com.alanstar.iotarduino.utils.GlobalValue.API_ADDRESS;
+import static com.alanstar.iotarduino.utils.GlobalValue.GET_LIGHT_STATE;
+import static com.alanstar.iotarduino.utils.GlobalValue.GET_LOCK_STATE;
+import static com.alanstar.iotarduino.utils.GlobalValue.GET_TEMP_AND_HUMID_STATE;
+
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -47,10 +52,6 @@ public class ConnectionFragment extends Fragment {
 
     // Light: 定义 static 接口
     public static final String TAG = "ConnectionFragment";
-    public static final String API_ADDRESS = "https://api.biliforum.cn/";
-    public static final String GET_LOCK_STATE = "v1/getLockState/";
-    public static final String GET_LIGHT_STATE = "v1/getLightState/";
-    public static final String GET_TEMP_AND_HUMID_STATE = "v1/getTempAndHumidState/";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

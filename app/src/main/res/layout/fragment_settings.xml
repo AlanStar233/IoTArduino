@@ -24,6 +24,64 @@
         android:layout_marginTop="?attr/qmui_topbar_height"
         android:background="@color/qmui_config_color_white">
 
+        <!-- 设置大盘 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- API 刷新时间 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/string_APIRefreshTime"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/et_APIRefreshTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/string_APIRefreshTimeEditText"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <!-- 图表刷新时间 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/string_ChartsRefreshTime"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/et_ChartsRefreshTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/string_ChartsRefreshTimeEditText"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
 
 
     </ScrollView>

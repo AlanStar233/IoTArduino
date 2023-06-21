@@ -1,17 +1,23 @@
 package com.alanstar.iotarduino.Fragments;
 
+import static com.alanstar.iotarduino.utils.GlobalValue.API_ADDRESS;
+import static com.alanstar.iotarduino.utils.GlobalValue.GET_LIGHT_STATE;
+import static com.alanstar.iotarduino.utils.GlobalValue.GET_LOCK_STATE;
+import static com.alanstar.iotarduino.utils.GlobalValue.GET_TEMP_AND_HUMID_STATE;
+import static com.alanstar.iotarduino.utils.GlobalValue.SET_LIGHT_STATE;
+import static com.alanstar.iotarduino.utils.GlobalValue.SET_LOCK_STATE;
+import static com.alanstar.iotarduino.utils.GlobalValue.SET_TEMP_AND_HUMID_STATE;
+
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.alanstar.iotarduino.R;
 import com.alanstar.iotarduino.utils.APILiveTester;
@@ -39,9 +45,6 @@ public class HomeFragment extends Fragment {
     TextView getTempAndHumidStateCode;
     TextView getTempAndHumidStateLatency;
 
-    // Light: 注册一个 mTopBarStateListener
-    private mTopBarStateListener mTopBarStateListener;
-
     // 创建变量
     boolean isFirstLoad = true; // 是否为第一次加载 Fragment
     int nowTimerCount = 0;  // 当前计时时长
@@ -49,15 +52,6 @@ public class HomeFragment extends Fragment {
     Timer mTimer;
     TimerTask mTimerTask;
     APILiveTester mAPILiveTester = new APILiveTester();
-
-    // 常量
-    public static final String API_ADDRESS = "https://api.biliforum.cn/";
-    public static final String SET_LOCK_STATE = "v1/setLockState/";
-    public static final String GET_LOCK_STATE = "v1/getLockState/";
-    public static final String SET_LIGHT_STATE = "v1/setLightState/";
-    public static final String GET_LIGHT_STATE = "v1/getLightState/";
-    public static final String SET_TEMP_AND_HUMID_STATE = "v1/setTempAndHumidState/";
-    public static final String GET_TEMP_AND_HUMID_STATE = "v1/getTempAndHumidState/";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -102,20 +96,6 @@ public class HomeFragment extends Fragment {
         getLightStateLatency = view.findViewById(R.id.getLightStateLatency);
         getTempAndHumidStateCode = view.findViewById(R.id.getTempAndHumidStateCode);
         getTempAndHumidStateLatency = view.findViewById(R.id.getTempAndHumidStateLatency);
-    }
-
-    // Light: 定义 mTopBar 数据回调接口
-    public interface mTopBarStateListener {
-        void sendTopBarState(int state);
-    }
-
-    // Light: Activity 与 Fragment 联系时调用
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-
-        // 获取实现接口的 Activity
-        mTopBarStateListener = (mTopBarStateListener) getActivity();
     }
 
     // Light: Fragment 获得焦点

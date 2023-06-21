@@ -23,4 +23,8 @@
     <string name="tv_lockState">已锁</string>
     <string name="string_lightData">光照数据</string>
     <string name="string_tempAndHumidData">温湿度数据</string>
+    <string name="string_APIRefreshTime">API刷新时间 (秒)</string>
+    <string name="string_APIRefreshTimeEditText">5秒</string>
+    <string name="string_ChartsRefreshTime">图表刷新时间 (秒)</string>
+    <string name="string_ChartsRefreshTimeEditText">5秒</string>
 </resources>
