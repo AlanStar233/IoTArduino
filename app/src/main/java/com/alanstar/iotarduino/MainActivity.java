@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
         // Light: 获取当前 fragment
-        int index = mViewPager.getCurrentItem();
+        // int index = mViewPager.getCurrentItem();
         // Fragment fragment = (Fragment) Objects.requireNonNull(mViewPager.getAdapter()).instantiateItem(mViewPager, index);
         // QMUITopBar fragmentTopBar = fragment.requireView().findViewById(R.id.mTopBar);
 
