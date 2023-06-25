@@ -12,11 +12,9 @@ import java.util.List;
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> data;
-    private FragmentManager fm;
 
     public MyFragmentPagerAdapter(FragmentManager fm, List<Fragment> data) {
         super(fm);
-        this.fm = fm;
         this.data = data;
     }
 

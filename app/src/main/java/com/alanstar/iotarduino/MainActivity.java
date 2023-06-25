@@ -21,7 +21,6 @@ import com.alanstar.iotarduino.Fragments.RequestFragment;
 import com.alanstar.iotarduino.Fragments.SettingsFragment;
 import com.alanstar.iotarduino.utils.MyFragmentPagerAdapter;
 import com.alanstar.iotarduino.utils.TopBarController;
-import com.qmuiteam.qmui.widget.QMUITopBar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         // Light: 获取当前 fragment
         int index = mViewPager.getCurrentItem();
         Fragment fragment = (Fragment) Objects.requireNonNull(mViewPager.getAdapter()).instantiateItem(mViewPager, index);
-        QMUITopBar fragmentTopBar = fragment.requireView().findViewById(R.id.mTopBar);
+        // QMUITopBar fragmentTopBar = fragment.requireView().findViewById(R.id.mTopBar);
 
         if (checkedId == R.id.radioHome) {
             mViewPager.setCurrentItem(0, true);
