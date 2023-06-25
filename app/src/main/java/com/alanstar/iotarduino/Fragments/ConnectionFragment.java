@@ -58,7 +58,7 @@ public class ConnectionFragment extends Fragment {
     Timer mTimer;
     TimerTask mTimerTask;
 
-    // Light: 定义 static 接口
+    // Light: 定义 TAG
     public static final String TAG = "ConnectionFragment";
 
     @Override
