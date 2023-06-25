@@ -51,7 +51,6 @@ public class APILiveTester {
     public String APILatency(String address, String method) {
 
         long startTime = System.currentTimeMillis();
-        int responseCode;
         try {
             // 创建 URL 对象
             URL url = new URL(address);
