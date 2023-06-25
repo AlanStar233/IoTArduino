@@ -12,7 +12,7 @@
     <string name="setTempAndHumidState">v1/setTempAndHumidState/</string>
     <string name="getTempAndHumidState">v1/getTempAndHumidState/</string>
     <string name="StateCodeDefault">未知</string>
-    <string name="defaultLatency">999ms</string>
+    <string name="defaultLatency">N/A</string>
     <string name="WebAPI_Statement">Web API 状态</string>
     <string name="APIDelayTimer">0/0</string>
     <string name="waitForFlush">等待刷新</string>
@@ -27,4 +27,11 @@
     <string name="string_APIRefreshTimeEditText">5</string>
     <string name="string_ChartsRefreshTime">图表刷新时间 (秒)</string>
     <string name="string_ChartsRefreshTimeEditText">5</string>
+    <string name="string_selectPort">选择请求接口</string>
+    <string name="tv_param1">请求参数1</string>
+    <string name="tv_param2">请求参数2</string>
+    <string name="string_req_params">填写请求参数</string>
+    <string name="btn_sendReq">发送请求</string>
+    <string name="string_ReqResult">请求结果</string>
+    <string name="tv_ReqResults">暂无请求结果</string>
 </resources>
