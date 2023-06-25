@@ -85,7 +85,7 @@ public class RequestFragment extends Fragment implements AdapterView.OnItemSelec
     @SuppressLint("SetTextI18n")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String selectedValue = parent.getItemAtPosition(position).toString();
+//        String selectedValue = parent.getItemAtPosition(position).toString();
         itemPosition = position;    // 在 class 中保存 position 的位置
         // Toast.makeText(getActivity(), "Selected: " + position + " " + selectedItem + " " + selectedValue, Toast.LENGTH_SHORT).show();
         tv_param_1.setText("请求参数1");

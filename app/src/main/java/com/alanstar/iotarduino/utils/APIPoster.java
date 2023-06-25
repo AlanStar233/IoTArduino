@@ -1,5 +1,7 @@
 package com.alanstar.iotarduino.utils;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -45,7 +47,8 @@ public class APIPoster {
                 return "Error: " + responseCode;
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Log.e(TAG, "setLightState: ", e);
+            return "Error: " + e;
         }
     }
 
@@ -77,7 +80,8 @@ public class APIPoster {
                 return "Error: " + response;
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Log.e(TAG, "setLightState: ", e);
+            return "Error: " + e;
         }
     }
 
@@ -110,7 +114,8 @@ public class APIPoster {
                 return "Error: " + response;
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Log.e(TAG, "setLightState: ", e);
+            return "Error: " + e;
         }
     }
 
