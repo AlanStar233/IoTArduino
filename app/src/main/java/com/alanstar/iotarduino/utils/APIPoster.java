@@ -150,7 +150,7 @@ public class APIPoster {
             // 使用 toJson 方法将 JsonElement 转换为美化输出的 JSON 字符串
             return gson.toJson(jsonElement);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, "beautifyJson error : ", e);
         }
 
         return null;
