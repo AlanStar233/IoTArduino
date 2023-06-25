@@ -1,11 +1,17 @@
 package com.alanstar.iotarduino.utils;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
 public class APILiveTester {
+
+    // 创建常量
+    public static final String TAG = "APILiveTester";
+
     /**
      * 测试 API 返回 HTTPCode
      * tips: 需要 HTTPS API
@@ -28,7 +34,8 @@ public class APILiveTester {
 
             // 发送请求并获得响应码
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Log.e(TAG, "APIHttpsCode error: ", e);
+            return "Error: " + e;
         }
         return String.valueOf(responseCode);
     }
@@ -53,12 +60,9 @@ public class APILiveTester {
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             connection.setRequestMethod(method);
 
-            // 发送请求并 get 响应码
-            responseCode = connection.getResponseCode();
-
             // 发送请求并获得响应码
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Log.e(TAG, "APIHttpsCode error: ", e);
         }
         long endTime = System.currentTimeMillis();
         return String.valueOf(endTime - startTime);
